@@ -38,9 +38,9 @@ public class Driver {
             caps.setCapability(MobileCapabilityType.PLATFORM_VERSION, ANDROIDVERSION);
             caps.setCapability(MobileCapabilityType.PLATFORM_NAME, PLATFORM);
             caps.setCapability(MobileCapabilityType.AUTOMATION_NAME, OTOMASYON_ISMI);
-           // caps.setCapability("app","C:\\Users\\ahmet\\IdeaProjects\\Team_141_Cucumber\\Apps\\Aile Bütçem_1.07_apkcombo.com.apk");
-           caps.setCapability("appPackage","com.ailebutcem");
-           caps.setCapability("appActivity","com.ailebutcem.MainActivity");
+          //  caps.setCapability("app","C:\\Users\\ahmet\\IdeaProjects\\Team_141_Cucumber\\Apps\\Aile Bütçem_1.07_apkcombo.com.apk");
+             caps.setCapability("appPackage","com.ailebutcem");
+             caps.setCapability("appActivity","com.ailebutcem.MainActivity");
             caps.setCapability(MobileCapabilityType.NO_RESET,false);
             /* eger false olursa; her test baslangicinda kullanici datalari(tercihleri) sifirlanir ve uygulama
             her seferinde ilk yuklendigi haliyle calisir

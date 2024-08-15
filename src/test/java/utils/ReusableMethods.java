@@ -50,4 +50,12 @@ public class ReusableMethods {
         FileUtils.copyFile(source, finalDestination);
         return target;
     }
+
+    public static void ekranKaydirmaMethodu(int pressx,int pressy,int wait,int moveX,int moveY){
+        TouchAction action=new TouchAction<>(Driver.getAndroidDriver());
+        action.press(PointOption.point(pressx,pressy))
+                .waitAction(WaitOptions.waitOptions(Duration.ofMillis(wait)))
+                .moveTo(PointOption.point(moveX,moveY))
+                .release().perform();
+    }
 }
