@@ -1,12 +1,12 @@
-
+@ab
 Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
 
-
-  Scenario Outline: Kullanici aile butcem uygulamasindaki hesabim bolumde degisiklikleri dogrular
-
+  Background: sisteme giris yapilmasi gereken ortak adimlar
     * ilk ekran ayarlarini yapin 889 1275 750 178 1275 ve ardindan login sayfasina "Giriş Yap" ulasin
     * "email" ve "password" bilgilerini girerek kullanici bilgileriyle giris yapin
     * uygulamaya kullanici bilgileriyle giris yapildigini dogrulayin
+
+  Scenario Outline: Kullanici aile butcem uygulamasindaki hesabim bolumde degisiklikleri dogrular
     * sol kisimdaki menuden "Hesabım" bolumune gidin
     * hesabim sayfasindaki bilgileri "<isim>" "<soyisim>" "<sehir>" "<yas>" "<meslek>" degistirerek degisikleri kaydedin ve dogrulayin
     * Kullanici uygulamayi kapatir
@@ -17,9 +17,6 @@ Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
 
 
   Scenario: Aile butcem uygulamasindaki gelir ekleme bolumden serbest gelir gorevleri yerine getirlir
-    * ilk ekran ayarlarini yapin 889 1275 750 178 1275 ve ardindan login sayfasina "Giriş Yap" ulasin
-    * "email" ve "password" bilgilerini girerek kullanici bilgileriyle giris yapin
-    * uygulamaya kullanici bilgileriyle giris yapildigini dogrulayin
     * anasayfadaki arti butonuna tiklayin
     * "Gelir Ekle" Butonuna text uzerinden Tiklanir
     * Gelir Ekle sayfasinda aciklama kismina "T141 ilk gelir" deger girilir
@@ -33,9 +30,6 @@ Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
 
     Scenario: aile butcem uygulamasindaki gelir ekleme bolumden maas ekleme gorevleri yerine getirlir
 
-      * ilk ekran ayarlarini yapin 889 1275 750 178 1275 ve ardindan login sayfasina "Giriş Yap" ulasin
-      * "email" ve "password" bilgilerini girerek kullanici bilgileriyle giris yapin
-      * uygulamaya kullanici bilgileriyle giris yapildigini dogrulayin
       * anasayfadaki arti butonuna tiklayin
       * "Gelir Ekle" Butonuna text uzerinden Tiklanir
       * Gelir Ekle sayfasinda aciklama kismina "T141 ilk maasi" deger girilir
@@ -46,12 +40,8 @@ Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
       * "Kaydet" Butonuna text uzerinden Tiklanir
       * basariyla eklendigini dogrulayin
       * Kullanici uygulamayi kapatir
-  @ab
-    Scenario: aile butcem uygulamasindaki gider ekleme bolumden market gorevleri yerine getirlir
 
-      * ilk ekran ayarlarini yapin 889 1275 750 178 1275 ve ardindan login sayfasina "Giriş Yap" ulasin
-      * "email" ve "password" bilgilerini girerek kullanici bilgileriyle giris yapin
-      * uygulamaya kullanici bilgileriyle giris yapildigini dogrulayin
+    Scenario: aile butcem uygulamasindaki gider ekleme bolumden market gorevleri yerine getirlir
       * anasayfadaki arti butonuna tiklayin
       * "Gider Ekle" Butonuna text uzerinden Tiklanir
       * Gelir Ekle sayfasinda aciklama kismina "T141 ilk market alis verisi" deger girilir
