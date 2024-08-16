@@ -34,11 +34,53 @@ public class aileButcem {
         ReusableMethods.scrollWithUiScrollableAndClick(menuSecim);
     }
     @Given("hesabim sayfasindaki bilgileri {string} {string} {string} {string} {string} degistirerek degisikleri kaydedin ve dogrulayin")
-    public void hesabim_sayfasindaki_bilgileri_degistirerek_degisikleri_kaydedin_ve_dogrulayin(String isim,String soyIsim,String sehir,String yas,String meslek) {
+    public void hesabim_sayfasindaki_bilgileri_degistirerek_degisikleri_kaydedin_ve_dogrulayin(String isim,String soyIsim,String sehir,String yas,String meslek) throws InterruptedException {
     pages.hesabimYeniBilgiDogrulama(isim,soyIsim,sehir,yas,meslek);
+    Thread.sleep(2000);
     }
     @Given("Kullanici uygulamayi kapatir")
     public void kullanici_uygulamayi_kapatir() {
+     Driver.quitAppiumDriver();
+    }
+
+
+    @Given("anasayfadaki arti butonuna tiklayin")
+    public void anasayfadaki_arti_butonuna_tiklayin() throws InterruptedException {
+        ReusableMethods.koordinatTiklamaMethodu(536,2040,500);
+    }
+    @Given("{string} Butonuna text uzerinden Tiklanir")
+    public void butonuna_text_uzerinden_tiklanir(String secenek) {
+        ReusableMethods.scrollWithUiScrollableAndClick(secenek);
+    }
+    @Given("Gelir Ekle sayfasinda aciklama kismina {string} deger girilir")
+    public void gelir_ekle_sayfasinda_aciklama_kismina_ıkinci_gelir_degeri_deger_girilir(String aciklama) {
+        pages.aciklamaKutusu.sendKeys(aciklama);
+    }
+    @Given("Gelir Ekle sayfasinda Gelir tipi {string} secilir")
+    public void gelir_ekle_sayfasinda_gelir_tipi_düzenli_secilir(String gelirTipi) {
+        pages.gelirTipi.click();
+        ReusableMethods.scrollWithUiScrollableAndClick(gelirTipi);
+    }
+    @Given("Gelir Ekle sayfasinda Gelir Periyodu Gelir tipi Aylık secilir")
+    public void gelir_ekle_sayfasinda_gelir_periyodu_gelir_tipi_aylık_secilir() {
+    pages.kategoriTipi.click();
+    ReusableMethods.scrollWithUiScrollableAndClick("");
+    }
+    @Given("Gelir Ekle sayfasinda Kategori {string} secilir")
+    public void gelir_ekle_sayfasinda_kategori_kategori_maaş_geliri_secilir() {
+
+    }
+    @Given("Gelir Ekle sayfasinda Tarih belirlemesi ve gun secimi yapilir")
+    public void gelir_ekle_sayfasinda_tarih_belirlemesi_ve_gun_secimi_yapilir() {
+
+    }
+    @Given("Gelir Ekle sayfasinda Tutar bilgisi girilir")
+    public void gelir_ekle_sayfasinda_tutar_bilgisi_girilir() {
+
+    }
+
+    @Given("basariyla eklendigini dogrulayin")
+    public void basariyla_eklendigini_dogrulayin() {
 
     }
 

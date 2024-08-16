@@ -1,16 +1,32 @@
 
 Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
-  @ab
-  Scenario: Kullanici aile butcem uygulamasindaki hesabim bolumde degisiklikleri dogrular
+
+  Scenario Outline: Kullanici aile butcem uygulamasindaki hesabim bolumde degisiklikleri dogrular
 
     * ilk ekran ayarlarini yapin 889 1275 750 178 1275 ve ardindan login sayfasina "Giriş Yap" ulasin
     * "email" ve "password" bilgilerini girerek kullanici bilgileriyle giris yapin
     * uygulamaya kullanici bilgileriyle giris yapildigini dogrulayin
     * sol kisimdaki menuden "Hesabım" bolumune gidin
-    * hesabim sayfasindaki bilgileri "nevzat" "celik" "ankara" "26" "qa instructor" degistirerek degisikleri kaydedin ve dogrulayin
+    * hesabim sayfasindaki bilgileri "<isim>" "<soyisim>" "<sehir>" "<yas>" "<meslek>" degistirerek degisikleri kaydedin ve dogrulayin
     * Kullanici uygulamayi kapatir
+    Examples:
+      | isim     |soyisim |sehir |yas |meslek|
+      | isim1    |soyisim1|sehir1|yas1|meslek1|
+      | isim2    |soyisim2|sehir2|yas2|meslek2|
 
-  Scenario: samsung s23 cihazinda ekran ayarlari yapilir
-
-    * ilk ekran ayarlarini yapin 1500 250 1000 250 250 ve ardindan login sayfasina "Sign In" ulasin
-    * "testfort141@gmail.com" ve "t141t141" bilgilerini girerek kullanici bilgileriyle giris yapin
+  @ab
+  Scenario: Aile butcem uygulamasindaki gelir ekleme gorevleri yerine getirlir
+    * ilk ekran ayarlarini yapin 889 1275 750 178 1275 ve ardindan login sayfasina "Giriş Yap" ulasin
+    * "email" ve "password" bilgilerini girerek kullanici bilgileriyle giris yapin
+    * uygulamaya kullanici bilgileriyle giris yapildigini dogrulayin
+    * anasayfadaki arti butonuna tiklayin
+    * Gelir Ekle Butonuna text uzerinden Tiklanir
+    * Gelir Ekle sayfasinda aciklama kismina Ikinci gelir degeri " deger girilir
+    * Gelir Ekle sayfasinda Gelir tipi Düzenli secilir
+    * Gelir Ekle sayfasinda Gelir Periyodu Gelir tipi Aylık secilir
+    * Gelir Ekle sayfasinda Kategori Kategori Maaş Geliri secilir
+    * Gelir Ekle sayfasinda Tarih belirlemesi ve gun secimi yapilir
+    * Gelir Ekle sayfasinda Tutar bilgisi girilir
+    * "Kaydet" Butonuna text uzerinden Tiklanir
+    * basariyla eklendigini dogrulayin
+    * kullanici uygulamayi kapatir

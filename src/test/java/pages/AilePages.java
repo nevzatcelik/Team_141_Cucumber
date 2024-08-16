@@ -44,6 +44,21 @@ public class AilePages {
     @FindBy(xpath = "(//*[@class='android.widget.EditText'])[5]")
     public MobileElement meslekKutusu;
 
+    @FindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
+    public MobileElement aciklamaKutusu;
+
+    @FindBy(xpath = "(//*[@class='android.widget.EditText'])[2]")
+    public MobileElement tutarKutusu;
+
+    @FindBy(xpath = "//*[@text='Gelir Tipi']")
+    public MobileElement gelirTipi;
+
+    @FindBy(xpath = "//*[@text='Kategori']")
+    public MobileElement kategoriTipi;
+
+    @FindBy(xpath = "(//*[@class='android.widget.ImageView'])[5]")
+    public MobileElement tarih;
+
 
       public void hesabimKutuTemizleme(){
           isimKutusu.clear();
@@ -55,17 +70,17 @@ public class AilePages {
 
       public void hesabimYeniBilgiDogrulama(String isim,String soyIsim,String sehir,String yas,String meslek){
           hesabimKutuTemizleme();
-          isimKutusu.sendKeys(isim);
-          soyisimKutusu.sendKeys(soyIsim);
-          sehirKutusu.sendKeys(sehir);
-          yasKutusu.sendKeys(yas);
-          meslekKutusu.sendKeys(meslek);
+          isimKutusu.sendKeys(ConfigReader.getProperty(isim));
+          soyisimKutusu.sendKeys(ConfigReader.getProperty(soyIsim));
+          sehirKutusu.sendKeys(ConfigReader.getProperty(sehir));
+          yasKutusu.sendKeys(ConfigReader.getProperty(yas));
+          meslekKutusu.sendKeys(ConfigReader.getProperty(meslek));
           ReusableMethods.scrollWithUiScrollableAndClick("Kaydet");
-          Assert.assertEquals(isimKutusu.getText(), isim);
-          Assert.assertEquals(soyisimKutusu.getText(),soyIsim);
-          Assert.assertEquals(sehirKutusu.getText(), sehir);
-          Assert.assertEquals(yasKutusu.getText(), yas);
-          Assert.assertEquals(meslekKutusu.getText(), meslek);
+          Assert.assertEquals(isimKutusu.getText(), ConfigReader.getProperty(isim));
+          Assert.assertEquals(soyisimKutusu.getText(),ConfigReader.getProperty(soyIsim));
+          Assert.assertEquals(sehirKutusu.getText(), ConfigReader.getProperty(sehir));
+          Assert.assertEquals(yasKutusu.getText(), ConfigReader.getProperty(yas));
+          Assert.assertEquals(meslekKutusu.getText(), ConfigReader.getProperty(meslek));
       }
 
 
