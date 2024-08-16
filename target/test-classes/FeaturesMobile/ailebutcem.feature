@@ -6,8 +6,8 @@ Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
     * ilk ekran ayarlarini yapin 889 1275 750 178 1275 ve ardindan login sayfasina "Giriş Yap" ulasin
     * "email" ve "password" bilgilerini girerek kullanici bilgileriyle giris yapin
     * uygulamaya kullanici bilgileriyle giris yapildigini dogrulayin
-    * sol kisimdaki menuden Hesabım bolumune gidin
-    * hesabim sayfasindaki bilgileri degistirerek degisikleri kaydedin ve dogrulayin
+    * sol kisimdaki menuden "Hesabım" bolumune gidin
+    * hesabim sayfasindaki bilgileri "nevzat" "celik" "ankara" "26" "qa instructor" degistirerek degisikleri kaydedin ve dogrulayin
     * Kullanici uygulamayi kapatir
 
   Scenario: samsung s23 cihazinda ekran ayarlari yapilir

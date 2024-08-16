@@ -27,13 +27,15 @@ public class aileButcem {
     public void uygulamaya_kullanici_bilgileriyle_giris_yapildigini_dogrulayin() {
         Assert.assertTrue(pages.basariliGirisText.isDisplayed());
     }
-    @Given("sol kisimdaki menuden Hesabım bolumune gidin")
-    public void sol_kisimdaki_menuden_hesabım_bolumune_gidin() {
-
+    @Given("sol kisimdaki menuden {string} bolumune gidin")
+    public void sol_kisimdaki_menuden_hesabım_bolumune_gidin(String menuSecim) throws InterruptedException {
+        Thread.sleep(4000);
+        pages.hamburgerMenu.click();
+        ReusableMethods.scrollWithUiScrollableAndClick(menuSecim);
     }
-    @Given("hesabim sayfasindaki bilgileri degistirerek degisikleri kaydedin ve dogrulayin")
-    public void hesabim_sayfasindaki_bilgileri_degistirerek_degisikleri_kaydedin_ve_dogrulayin() {
-
+    @Given("hesabim sayfasindaki bilgileri {string} {string} {string} {string} {string} degistirerek degisikleri kaydedin ve dogrulayin")
+    public void hesabim_sayfasindaki_bilgileri_degistirerek_degisikleri_kaydedin_ve_dogrulayin(String isim,String soyIsim,String sehir,String yas,String meslek) {
+    pages.hesabimYeniBilgiDogrulama(isim,soyIsim,sehir,yas,meslek);
     }
     @Given("Kullanici uygulamayi kapatir")
     public void kullanici_uygulamayi_kapatir() {
