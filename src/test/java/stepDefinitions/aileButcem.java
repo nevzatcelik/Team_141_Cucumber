@@ -57,31 +57,40 @@ public class aileButcem {
         pages.aciklamaKutusu.sendKeys(aciklama);
     }
     @Given("Gelir Ekle sayfasinda Gelir tipi {string} secilir")
-    public void gelir_ekle_sayfasinda_gelir_tipi_düzenli_secilir(String gelirTipi) {
-        pages.gelirTipi.click();
+    public void gelir_ekle_sayfasinda_gelir_tipi_düzenli_secilir(String gelirTipi) throws InterruptedException {
+        pages.gelirGiderTipi.click();
+        Thread.sleep(1000);
         ReusableMethods.scrollWithUiScrollableAndClick(gelirTipi);
     }
-    @Given("Gelir Ekle sayfasinda Gelir Periyodu Gelir tipi Aylık secilir")
-    public void gelir_ekle_sayfasinda_gelir_periyodu_gelir_tipi_aylık_secilir() {
-    pages.kategoriTipi.click();
-    ReusableMethods.scrollWithUiScrollableAndClick("");
-    }
+
     @Given("Gelir Ekle sayfasinda Kategori {string} secilir")
-    public void gelir_ekle_sayfasinda_kategori_kategori_maaş_geliri_secilir() {
-
+    public void gelir_ekle_sayfasinda_kategori_kategori_maaş_geliri_secilir(String kategori) throws InterruptedException {
+        pages.kategoriTipi.click();
+        Thread.sleep(1000);
+        ReusableMethods.scrollWithUiScrollableAndClick(kategori);
     }
-    @Given("Gelir Ekle sayfasinda Tarih belirlemesi ve gun secimi yapilir")
-    public void gelir_ekle_sayfasinda_tarih_belirlemesi_ve_gun_secimi_yapilir() {
-
+    @Given("Gelir Ekle sayfasinda Tarih belirlemesi {int} ve gun secimi {string} yapilir")
+    public void gelir_ekle_sayfasinda_tarih_belirlemesi_ve_gun_secimi_yapilir(int gidilecekAy,String secilecekGun) throws InterruptedException {
+       pages.tarih.click();
+        Thread.sleep(1000);
+       pages.aySecmeMethodu(gidilecekAy,secilecekGun);
     }
-    @Given("Gelir Ekle sayfasinda Tutar bilgisi girilir")
-    public void gelir_ekle_sayfasinda_tutar_bilgisi_girilir() {
-
+    @Given("Gelir Ekle sayfasinda Tutar bilgisi {string} girilir")
+    public void gelir_ekle_sayfasinda_tutar_bilgisi_girilir(String tutar) {
+        pages.tutarKutusu.sendKeys(tutar);
     }
 
     @Given("basariyla eklendigini dogrulayin")
     public void basariyla_eklendigini_dogrulayin() {
+       Assert.assertTrue(pages.gelirEklendiText.isDisplayed());
+    }
+    @Given("Gelir Ekle sayfasinda Gelir Periyodu Gelir tipi Aylık secilir")
+    public void gelir_ekle_sayfasinda_gelir_periyodu_gelir_tipi_aylık_secilir() {
 
     }
 
+    @Given("basariyla gider eklendigini dogrulayin")
+    public void basariyla_gider_eklendigini_dogrulayin() {
+         Assert.assertTrue(pages.giderEklendiText.isDisplayed());
+    }
 }

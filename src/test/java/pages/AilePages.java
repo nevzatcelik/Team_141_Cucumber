@@ -50,14 +50,32 @@ public class AilePages {
     @FindBy(xpath = "(//*[@class='android.widget.EditText'])[2]")
     public MobileElement tutarKutusu;
 
-    @FindBy(xpath = "//*[@text='Gelir Tipi']")
-    public MobileElement gelirTipi;
+    @FindBy(xpath = "(//*[@class='android.view.ViewGroup'])[10]")
+    public MobileElement gelirGiderTipi;
 
     @FindBy(xpath = "//*[@text='Kategori']")
     public MobileElement kategoriTipi;
 
     @FindBy(xpath = "(//*[@class='android.widget.ImageView'])[5]")
     public MobileElement tarih;
+
+    @FindBy(id = "android:id/next")
+    public MobileElement nextMonth;
+
+    @FindBy(xpath = "//*[@text='Gelir eklendi.']")
+    public MobileElement gelirEklendiText;
+
+    @FindBy(xpath = "//*[@text='Gider eklendi.']")
+    public MobileElement giderEklendiText;
+
+    public void aySecmeMethodu(int gidilecekAY,String secilecekGun) throws InterruptedException {
+        for (int i = 0; i <gidilecekAY ; i++) {
+            nextMonth.click();
+            Thread.sleep(1000);
+        }
+        ReusableMethods.scrollWithUiScrollableAndClick(secilecekGun);
+        ReusableMethods.scrollWithUiScrollableAndClick("OK");
+    }
 
 
       public void hesabimKutuTemizleme(){
