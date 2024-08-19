@@ -1,4 +1,4 @@
-@ab
+
 Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
 
   Background: sisteme giris yapilmasi gereken ortak adimlar
@@ -15,7 +15,7 @@ Feature: Kullanici aile butcem uygulamasindaki gorevleri yerine getirir
       | isim1    |soyisim1|sehir1|yas1|meslek1|
       | isim2    |soyisim2|sehir2|yas2|meslek2|
 
-
+  @ab
   Scenario: Aile butcem uygulamasindaki gelir ekleme bolumden serbest gelir gorevleri yerine getirlir
     * anasayfadaki arti butonuna tiklayin
     * "Gelir Ekle" Butonuna text uzerinden Tiklanir

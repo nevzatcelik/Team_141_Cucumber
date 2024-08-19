@@ -17,7 +17,7 @@ public class Driver {
     private static IOSDriver<IOSElement> iosDriver;
 
     static final String TELEFONADI="Pixel 4";
-    static final String ANDROIDVERSION="10.0";
+    static final String ANDROIDVERSION="7.0";
     static final String PLATFORM="Android";
     static final String OTOMASYON_ISMI="UiAutomator2";
 
